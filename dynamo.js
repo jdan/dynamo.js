@@ -66,7 +66,8 @@ DEALINGS IN THE SOFTWARE.
                 'display' : 'inline-block',
                 'position' : 'relative', 
                 'overflow' : 'hidden', 
-                'vertical-align' : 'bottom' 
+                'vertical-align' : 'bottom',
+                'text-align' : 'left' 
             });
         
             // now, animate it
