@@ -21,26 +21,22 @@ DEALINGS IN THE SOFTWARE.
 */
 
 (function($) {
-    
-    var defaults = {
-        delay: 3000,
-        speed: 350
-    };
-    
+
     $.fn.dynamo = function() {
 
         return this.each(function(i, v) {
-            var options =  $.extend(defaults, { delay: $(v).attr('data-delay'),
-                                                speed: $(v).attr('data-speed') });
-                                                
+
+            var delay = parseInt($(v).attr('data-delay')) || 3000;
+            var speed = parseInt($(v).attr('data-speed')) || 350;
+
             var lines = $(v).attr('data-lines').split(',');
-            
+
             // wrap the original contents in a span
             $(v).html($('<span></span>').text($(v).text()));
-            
+
             // grab the width of the span
             var max = $(v).find('span:eq(0)').width();
-            
+
             // for each item in data-lines, create a span with item as its content
             // compare the width of this span with the max
             for (var k in lines) {
@@ -48,7 +44,7 @@ DEALINGS IN THE SOFTWARE.
                 $(v).append(span);
                 max = Math.max(max, $(span).width());
             }
-            
+
             // replace all the spans with inline-div's
             $(v).find('span').each(function(i, el) {
                 var s = $(el).remove();
@@ -56,10 +52,10 @@ DEALINGS IN THE SOFTWARE.
                 $(d).width(max);
                 $(v).append(d);
             });
-            
+
             // set the height of the dynamo container
             var height = $(v).find('>:first-child').height();
-            
+
             // style
             $(v).width(max).height(height);
             $(v).css({
@@ -69,18 +65,16 @@ DEALINGS IN THE SOFTWARE.
                 'vertical-align' : 'bottom',
                 'text-align' : 'left' 
             });
-        
+
             // now, animate it
             var transition = function() {
-                $(v).find('div:first').delay(parseInt(options.delay))
-                                      .slideUp(parseInt(options.speed), function() { 
+                $(v).find('div:first').slideUp(speed, function() { 
                     $(v).append($(this).remove().show());
-                    transition(); // just a hack while setTransition doesn't play nice
                 });
             };
-            
-            transition();
+
+            setInterval(transition, delay);
         });
     };
-    
+
 })(jQuery);
