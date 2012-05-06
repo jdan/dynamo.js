@@ -44,6 +44,10 @@
                 'text-align' : 'left' 
             });
 
+            // manually center it if we need to
+            if ($(v).attr('data-center'))
+                $(v).css('text-align', 'center');
+
             // now, animate it
             var transition = function() {
                 $(v).find('div:first').slideUp(speed, function() { 
