@@ -33,4 +33,6 @@ and activate it like so:
 ### About
 dynamo.js was inspired by a tagline rails app I had been working in the past, which gives you the ability to generate a random tagline on your webpage. 
 
-MIT Licensed
+---------------------------------------
+
+&copy; 2012 [Jordan Scales](http://jordanscales.com) | MIT Licensed | See LICENSE.txt
