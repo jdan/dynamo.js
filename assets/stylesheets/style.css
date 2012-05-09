@@ -1,0 +1,77 @@
+body {
+    background-image: url('cross_scratches.png');
+}
+
+#content {
+    background-color: #fff;
+    width: 900px;
+margin-left: auto;
+    margin-right: auto;
+    padding: 35px;
+
+    position: relative;
+    top: -50px;
+
+    -moz-box-shadow: 0 0 8px 8px #aaa;
+    -webkit-box-shadow: 0 0 8px 8px #aaa;
+    box-shadow: 0 0 8px 8px #aaa;
+}
+
+#welcome-mat {
+    text-align: center;
+    margin: 50px auto 0 auto;
+}
+
+#welcome-mat h1 {
+    font-size: 90px;
+    line-height: 100px;
+}
+
+#welcome-mat p {
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 35px;
+}
+
+#welcome-mat #buttons {
+    margin-top: 25px;
+}
+
+p {
+    font-size: 120%;
+    line-height: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.example {
+    height: 90px !important;
+    margin: 15px 0;
+}
+
+div.example {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    padding: 8px;
+
+    border: 1px solid #aaa;
+}
+
+code {
+    color: #222;
+}
+
+li {
+    line-height: 30px;
+}
+
+.foot {
+    font-size: 100%;
+    float: right;
+}

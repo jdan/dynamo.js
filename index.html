@@ -1,0 +1,107 @@
+<html>
+<head>
+  <title>dynamo.js</title>
+  <link type="text/css" rel="stylesheet" href="assets/stylesheets/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="assets/stylesheets/style.css" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/prezjordan/dynamo.js/master/dynamo.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('.dynamo').dynamo()
+    });
+  </script>
+</head>
+<body>
+  <a href="https://github.com/prezjordan/dynamo.js"><img style="position: fixed; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+  <div id="content">
+    <div id="welcome-mat">
+      <h1>dynam<span class="dynamo" data-lines="ic">o</span></h1>
+      <p>A dead-simple way to generate dynamic bits of HTML and add subtle effects to your content.</p>
+      <div id="buttons">
+        <iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=prezjordan&repo=dynamo.js&type=watch&count=true"
+          allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        <iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=prezjordan&repo=dynamo.js&type=fork&count=true"
+          allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+      </div>
+    </div>
+
+    <hr class="soften" />
+
+    <h1>About</h1>
+
+    <p>Dynamo is the <span class="dynamo" data-speed="150" data-delay="1300" data-lines="easiest,cutest,helpful,pretty,subtle">simple</span> way to add a new dimension to your site content.
+      Cycle through various bits of text to add subtle variations to your work, or to draw attention to portions of your webpage. It was
+      created by <a href="http://jordanscales.com" rel="nofollow" target="_blank">this guy</a> and can be found on 
+      <a href="http://github.com/prezjordan/dynamo.js" rel="nofollow" target="_blank">GitHub</a>.</p>
+
+    <hr class="soften" />
+
+    <h1>Usage</h1>
+
+    <p>Implementing dynamo with your content involves little setup. Wrap your text in a container, specify the lines you want to cycle 
+      through, and start the engine with <code>$('#target').dynamo()</code>. Dynamo works with the help of 
+      <a href="http://jquery.com" rel="nofollow" target="_blank">jQuery</a>. For example:</p>
+
+    <div class="row">
+      <div class="span5">
+        <pre class="example">&lt;p&gt;I wish I could change the text here.&lt;/p&gt;</pre>
+      </div>
+      <div class="span5">
+        <div class="example">
+          <p>I wish I could change the text here.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span5">
+        <pre class="example">&lt;p&gt;I wish I could &lt;span class="dynamo" data-lines="modify,mutate,edit,morph,switch"&gt;change&lt;/span&gt; the text here.&lt;/p&gt;</pre>
+      </div>
+      <div class="span5">
+        <div class="example">
+          <p>I wish I could <span class="dynamo" data-lines="modify,mutate,edit,morph,switch">change</span> the text here.</p>
+        </div>
+      </div>
+    </div>
+
+    And launch it with...
+
+    <div class="row">
+      <div class="span5">
+        <pre class="example">&lt;script type="text/javascript"&gt;
+$(function() {
+  $('.dynamo').dynamo();
+});
+&lt;/script&gt;
+        </pre>
+      </div>
+      <div class="span5">
+        <div class="example">
+          <i>View our source (it's chock full of examples)</i>
+        </div>
+      </div>
+    </div>
+
+    <hr class="soften" />
+
+    <h1>Options</h1>
+
+    <p><b>Check out these limited options</b>
+      <ul>
+        <li><code>data-lines</code>: the bits of text (comma-separated) that cycle. Original text not included.</li>
+        <li><code>data-speed</code>: the speed of the transition (<i>default: 350ms</i>)</li>
+        <li><code>data-delay</code>: the delay between cycles (<i>default: 3000ms</i>)</li>
+        <li><code>data-center</code>: center the text in the dynamo container (<i>default: false</i>)</li>
+      </ul>
+    </p>
+
+    <hr class="soften" />
+
+    <p class="foot">
+      &copy; 2012 <a href="http://jordanscales.com" rel="nofollow" target="_blank">Jordan Scales</a> | MIT Licensed | <a href="http://github.com/prezjordan/dynamo.js" rel="nofollow" target="_blank">GitHub</a>
+    </p>
+  </div>
+
+</body>
+</html>
