@@ -14,7 +14,7 @@ dynamo.js takes any portion of text and allows you to cycle through different co
 <p>I wish I could <span class="dynamo" data-lines="alter,edit,mutate,morph">change</span> one of these words.</p>
 ```
 
-and activate it like so:
+and activate it like so: (this is done automatically for you, but you can use `.dynamo()` on any target)
 
 ```
 <script type="text/javascript">
