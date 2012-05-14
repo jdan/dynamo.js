@@ -3,40 +3,40 @@
     $.fn.dynamo = function() {
 
         return this.each(function(i, v) {
+            var el = $(v);
+            var delay = parseInt(el.attr('data-delay')) || 3000;
+            var speed = parseInt(el.attr('data-speed')) || 350;
 
-            var delay = parseInt($(v).attr('data-delay')) || 3000;
-            var speed = parseInt($(v).attr('data-speed')) || 350;
-
-            var lines = $(v).attr('data-lines').split(',');
+            var lines = el.attr('data-lines').split(',');
 
             // wrap the original contents in a span
-            $(v).html($('<span></span>').text($(v).text()));
+            el.html($('<span></span>').text(el.text()));
 
             // grab the width of the span
-            var max = $(v).find('span:eq(0)').width();
+            var max = el.find('span:eq(0)').width();
 
             // for each item in data-lines, create a span with item as its content
             // compare the width of this span with the max
             for (var k in lines) {
                 var span = $('<span></span>').text(lines[k]);
-                $(v).append(span);
-                max = Math.max(max, $(span).width());
+                el.append(span);
+                max = Math.max(max, el.width());
             }
 
             // replace all the spans with inline-div's
-            $(v).find('span').each(function(i, el) {
-                var s = $(el).remove();
+            el.find('span').each(function(i, ele) {
+                var s = $(ele).remove();
                 var d = $('<div></div>').text($(s).text());
                 $(d).width(max);
-                $(v).append(d);
+                el.append(d);
             });
 
             // set the height of the dynamo container
-            var height = $(v).find('>:first-child').height();
+            var height = el.find('>:first-child').height();
 
             // style
-            $(v).width(max).height(height);
-            $(v).css({
+            el.width(max).height(height);
+            el.css({
                 'display' : 'inline-block',
                 'position' : 'relative', 
                 'overflow' : 'hidden', 
@@ -45,13 +45,13 @@
             });
 
             // manually center it if we need to
-            if ($(v).attr('data-center'))
-                $(v).css('text-align', 'center');
+            if (el.attr('data-center'))
+                el.css('text-align', 'center');
 
             // now, animate it
             var transition = function() {
-                $(v).find('div:first').slideUp(speed, function() { 
-                    $(v).append($(this).remove().show());
+                el.find('div:first').slideUp(speed, function() { 
+                    el.append($(this).remove().show());
                 });
             };
 
