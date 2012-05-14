@@ -3,7 +3,7 @@
     $.fn.dynamo = function() {
 
         return this.each(function(i, v) {
-            var el = $(v);
+            var el = v;
             var delay = parseInt(el.attr('data-delay')) || 3000;
             var speed = parseInt(el.attr('data-speed')) || 350;
 
