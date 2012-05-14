@@ -23,7 +23,7 @@
             }
 
             // replace all the spans with inline-div's
-            el.find('span').each(function(i, ele) {
+            v.find('span').each(function(i, ele) {
                 var s = ele.remove();
                 var d = $('<div></div>').text(s.text());
                 d.width(max);
