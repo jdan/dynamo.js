@@ -20,7 +20,7 @@
             for (var k in lines) {
                 var span = $('<span></span>').text(lines[k]);
                 v.append(span);
-                max = Math.max(max, v.width());
+                max = Math.max(max, span.width());
             }
 
             // replace all the spans with inline-div's
