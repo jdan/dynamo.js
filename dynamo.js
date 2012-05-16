@@ -7,7 +7,7 @@
             var delay = parseInt(v.attr('data-delay')) || 3000;
             var speed = parseInt(v.attr('data-speed')) || 350;
 
-            var lines = v.attr('data-lines').split(',');
+            var lines = v.attr('data-lines').split(v.attr('data-delimiter') || ',');
 
             // wrap the original contents in a span
             v.html($('<span></span>').text(v.text()));
