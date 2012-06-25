@@ -58,6 +58,40 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="span5">
+        <pre class="example">&lt;p&gt;This element is &lt;span class="dynamo" data-lines="not paused." data-pause="true"&gt;paused&lt;/span&gt;&lt;/p&gt;</pre>
+      </div>
+      <div class="span5">
+        <div class="example">
+          <p>This element is <span class="dynamo" data-lines="not paused." data-pause="true">paused.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span5">
+        <pre class="example">&lt;p&gt;&lt;span id="manual_example" class="dynamo" data-pause="true" data-lines="[click again!],[and again!],[once more!]"&gt;[click here!]&lt;/span&gt;&lt;/p&gt;</pre>
+      </div>
+      <div class="span5">
+        <div class="example">
+          <p><span id="manual_example" class="dynamo" data-pause="true" data-lines="[click again!],[and again!],[once more!]">[click here!]</span></p>
+        </div>
+      </div>
+    </div>
+
+    Later on we have the following...
+
+    <div class="row">
+      <div class="span5">
+    <pre class="example">&lt;script type="text/javascript"&gt;
+  $('#manual_example').click(function() {
+    $(this).dynamo_trigger();
+  });
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+
     And launch it with... (<i>this is done automatically for you if your include tag is at the end of </i><code>&lt;/body&gt;</code><i>, but you can use </i><code>.dynamo()</code><i> on any target</i>)
 
     <div class="row">
@@ -99,6 +133,11 @@ $(function() {
   
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
   <script type="text/javascript" src="assets/javascripts/dynamo.min.js"></script>
+  <script type="text/javascript">
+    $('#manual_example').click(function() {
+      $(this).dynamo_trigger();
+    });
+  </script>
   
   <!-- google analytics -->
   <script type="text/javascript">
