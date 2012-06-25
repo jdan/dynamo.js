@@ -6,7 +6,7 @@
             v = $(v);
             delay = parseInt(v.data('delay')) || 3000;
             speed = parseInt(v.data('speed')) || 350;
-
+            pause = v.data('pause') || false;
             lines = v.data('lines').split(v.data('delimiter') || ',');
 
             // wrap the original contents in a span
@@ -25,7 +25,6 @@
 
             // replace all the spans with inline-div's
             v.find('span').each(function(i, ele) {
-                
                 s = $(ele).remove();
                 d = $('<div></div>').text(s.text());
                 d.width(max);
@@ -36,16 +35,15 @@
             height = v.find('>:first-child').height();
 
             // style
-            v
-                .width(max)
-                .height(height)
-                .css({
-                    'display' : 'inline-block',
-                    'position' : 'relative', 
-                    'overflow' : 'hidden', 
-                    'vertical-align' : 'bottom',
-                    'text-align' : 'left' 
-                });
+            v.width(max)
+             .height(height)
+             .css({
+                 'display' : 'inline-block',
+                 'position' : 'relative',
+                 'overflow' : 'hidden',
+                 'vertical-align' : 'bottom',
+                 'text-align' : 'left'
+             });
 
             // manually center it if we need to
             if (v.data('center'))
@@ -58,10 +56,12 @@
                 });
             };
 
-            setInterval(transition, delay);
+            if (!pause) {
+              setInterval(transition, delay);
+            }
         });
     };
-    
+
     // automatically initiate cycles on elements of class 'dynamo'
     $('.dynamo').dynamo();
 

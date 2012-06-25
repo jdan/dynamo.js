@@ -31,6 +31,7 @@ and activate it like so: (<i>this is done automatically for you if your include 
 * `data-delay`: the delay between transitions (*default: 3000ms*)
 * `data-center`: center the text in the dynamo container (*default: false*)
 * `data-delimiter`: change the character (or string) used to separate your bits of text (*default: ,*)
+* `data-pause`: sets up the dynamo, but does not automatically transition (*default: false*)
 
 ### Contributing
 
