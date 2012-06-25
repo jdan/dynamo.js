@@ -3,22 +3,22 @@
     $.fn.dynamo = function() {
 
         return this.each(function(i, v) {
-            var v = $(v);
-            var delay = parseInt(v.data('delay')) || 3000;
-            var speed = parseInt(v.data('speed')) || 350;
+            v = $(v);
+            delay = parseInt(v.data('delay')) || 3000;
+            speed = parseInt(v.data('speed')) || 350;
 
-            var lines = v.data('lines').split(v.data('delimiter') || ',');
+            lines = v.data('lines').split(v.data('delimiter') || ',');
 
             // wrap the original contents in a span
             v.html($('<span></span>').text(v.text()));
 
             // grab the width of the span
-            var max = v.find('span:eq(0)').width();
+            max = v.find('span:eq(0)').width();
 
             // for each item in data-lines, create a span with item as its content
             // compare the width of this span with the max
-            for (var k in lines) {
-                var span = $('<span></span>').text(lines[k]);
+            for (k in lines) {
+                span = $('<span></span>').text(lines[k]);
                 v.append(span);
                 max = Math.max(max, span.width());
             }
@@ -26,14 +26,14 @@
             // replace all the spans with inline-div's
             v.find('span').each(function(i, ele) {
                 
-                var s = $(ele).remove();
-                var d = $('<div></div>').text(s.text());
+                s = $(ele).remove();
+                d = $('<div></div>').text(s.text());
                 d.width(max);
                 v.append(d);
             });
 
             // set the height of the dynamo container
-            var height = v.find('>:first-child').height();
+            height = v.find('>:first-child').height();
 
             // style
             v
@@ -52,7 +52,7 @@
                 v.css('text-align', 'center');
 
             // now, animate it
-            var transition = function() {
+            transition = function() {
                 v.find('div:first').slideUp(speed, function() { 
                     v.append($(this).show());
                 });
