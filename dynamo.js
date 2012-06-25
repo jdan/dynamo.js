@@ -4,10 +4,10 @@
 
         return this.each(function(i, v) {
             var v = $(v);
-            var delay = parseInt(v.attr('data-delay')) || 3000;
-            var speed = parseInt(v.attr('data-speed')) || 350;
+            var delay = parseInt(v.data('delay')) || 3000;
+            var speed = parseInt(v.data('speed')) || 350;
 
-            var lines = v.attr('data-lines').split(v.attr('data-delimiter') || ',');
+            var lines = v.data('lines').split(v.data('delimiter') || ',');
 
             // wrap the original contents in a span
             v.html($('<span></span>').text(v.text()));
@@ -48,7 +48,7 @@
                 });
 
             // manually center it if we need to
-            if (v.attr('data-center'))
+            if (v.data('center'))
                 v.css('text-align', 'center');
 
             // now, animate it
@@ -65,4 +65,4 @@
     // automatically initiate cycles on elements of class 'dynamo'
     $('.dynamo').dynamo();
 
-})(jQuery);​
+})(jQuery);
