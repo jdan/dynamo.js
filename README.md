@@ -31,6 +31,17 @@ and activate it like so:
 * `data-delay`: the delay between transitions (*default: 3000ms*)
 * `data-center`: center the text in the dynamo container (*default: false*)
 
+### Contributing
+
+If you want to make a change to dynamo (the code is very small and very approachable!) please follow these steps
+
+* fork it.
+* commit your changes. (use proper git etiquette and work off a branch !!)
+* submit a pull request.
+* wait.
+
+I'm pretty quick with responses, so I'll likely shoot you a comment as confirmation. As for minifying - don't worry about it, I'll take care of that. Thanks for showing interest!
+
 ### About
 dynamo.js was inspired by a tagline rails app I had been working in the past, which gives you the ability to generate a random tagline on your webpage. 
 
