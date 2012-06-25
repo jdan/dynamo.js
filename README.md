@@ -24,6 +24,10 @@ and activate it like so: (<i>this is done automatically for you if your include 
 </script>
 ```
 
+### Manual Firing
+
+By default, dynamo.js will transition elements with a period specified by `data-delay`. If you wish to fire off a transition manually (only once), you may do so with `$('#mytarget').dynamo_trigger()`. Combine with a `data-pause="true"` property to create truly manual dynamo elements.
+
 ### Options
 
 * `data-lines`: the bits of content you want to cycle through (not including the original content)
