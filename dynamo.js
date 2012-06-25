@@ -60,8 +60,9 @@
         });
     };
     
-    $.fn.dynamo_trigger = function(speed) {
+    $.fn.dynamo_trigger = function() {
         return this.each(function(i, v) {
+            speed = parseInt(v.data('speed')) || 350;
             $(v).find('div:first').slideUp(speed, function() { 
                 $(v).append($(this).show());
             });
