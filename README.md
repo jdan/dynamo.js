@@ -14,7 +14,7 @@ dynamo.js takes any portion of text and allows you to cycle through different co
 <p>I wish I could <span class="dynamo" data-lines="alter,edit,mutate,morph">change</span> one of these words.</p>
 ```
 
-and activate it like so:
+and activate it like so: (*this is done automatically for you if your include tag is at the end of `&lt;/body&gt;`, but you can use `.dynamo()` on any target</i>*)
 
 ```
 <script type="text/javascript">
@@ -30,6 +30,7 @@ and activate it like so:
 * `data-speed`: the speed of the transition (*default: 350ms*)
 * `data-delay`: the delay between transitions (*default: 3000ms*)
 * `data-center`: center the text in the dynamo container (*default: false*)
+* `data-delimiter`: change the character (or string) used to separate your bits of text (*default: ,*)
 
 ### Contributing
 
