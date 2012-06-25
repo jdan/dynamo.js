@@ -24,7 +24,12 @@
     
   <p>Feel free to change this document and add any test cases you feel are appropriate.</p>
   
-  <p>This is <span class="dynamo" data-pause="true" data-lines="not paused.">paused.</span></p>
+  <p>This is <span id="pause_example" class="dynamo" data-pause="true" data-lines="not paused.">paused.</span></p>
   <script type="text/javascript" src="../dynamo.js"></script>
+  <script type="text/javascript">
+    $('#pause_example').click(function() {
+      $(this).dynamo_trigger();
+    });
+  </script>
 </body>
 </html>

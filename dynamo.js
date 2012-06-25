@@ -51,14 +51,20 @@
 
             // now, animate it
             transition = function() {
-                v.find('div:first').slideUp(speed, function() { 
-                    v.append($(this).show());
-                });
+                v.dynamo_trigger();
             };
 
             if (!pause) {
               setInterval(transition, delay);
             }
+        });
+    };
+    
+    $.fn.dynamo_trigger = function(speed) {
+        return this.each(function(i, v) {
+            $(v).find('div:first').slideUp(speed, function() { 
+                $(v).append($(this).show());
+            });
         });
     };
 
