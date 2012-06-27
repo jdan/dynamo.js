@@ -4,13 +4,17 @@
 
         return this.each(function(i, v) {
             v = $(v);
+            // we mark launched dynamos as "intialized" then check so we don't initialize them twice
+            if (v.data('initialized') == 'true')
+                return;
+            
             delay = parseInt(v.data('delay')) || 3000;
             speed = parseInt(v.data('speed')) || 350;
             pause = v.data('pause') || false;
             lines = v.data('lines').split(v.data('delimiter') || ',');
 
             // wrap the original contents in a span
-            v.html($('<span></span>').text(v.text()));
+            v.html($('<span></span>').text(v.text())).data('initialized', 'true');
 
             // grab the width of the span
             max = v.find('span:eq(0)').width();
