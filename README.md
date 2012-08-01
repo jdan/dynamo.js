@@ -1,7 +1,7 @@
 # Dynamo.js
 *a dead-simple way to add dynamic bits of content to your webpage*
 
-See it in action: http://jordanscales.com/dynamo/
+See it in action: http://prezjordan.github.com/dynamo.js/ 
 
 ### How does it work?
 dynamo.js takes any portion of text and allows you to cycle through different content. Use it to add subtle effects to your webpage, or to make a particular section pop.
