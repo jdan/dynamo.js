@@ -51,7 +51,7 @@ Alternatively, you can pass an options hash - which takes precedence over data a
         callback: function() { console.log('All items have been shown') }
     });
 
-**IMPORANT:** Since dynamo automatically initializes DOM elements with class `.dynamo`, you will not be able to pass options to these elements (data attributes will still work, though). This is because dynamo prevents the user from initializing a dynamo container more than once.
+**IMPORTANT:** Since dynamo automatically initializes DOM elements with class `.dynamo`, you will not be able to pass options to these elements (data attributes will still work, though). This is because dynamo prevents the user from initializing a dynamo container more than once.
 
 ### Contributing
 
