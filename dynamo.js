@@ -3,6 +3,8 @@
     $.fn.dynamo = function(options) {
 
         return this.each(function(i, v) {
+            options = options || {};
+
             var v = $(v);
             // we mark launched dynamos as "intialized" then check so we don't initialize them twice
             if (v.data('initialized') == 'true')
@@ -65,14 +67,18 @@
     };
     
     $.fn.dynamo_trigger = function(options) {
+
         return this.each(function(i, v) {
-            $(v).find('div:first').slideUp(options.speed, function() { 
+            options = options || {}
+
+            var speed = options.speed || 350;
+            $(v).find('div:first').slideUp(speed, function() {
                 $(v).append($(this).show());
             });
         });
     };
 
     // automatically initiate cycles on elements of class 'dynamo'
-    $('.dynamo').dynamo({});
+    $('.dynamo').dynamo();
 
 })(jQuery);
