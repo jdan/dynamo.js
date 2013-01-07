@@ -114,7 +114,7 @@ $(function() {
 
     <h1>Options</h1>
 
-    <p><b>Check out these limited options</b>
+    <p><b>You can customize dynamo using data attributes:</b>
       <ul>
         <li><code>data-lines</code>: the bits of text (comma-separated) that cycle. Original text not included.</li>
         <li><code>data-speed</code>: the speed of the transition (<i>default: 350ms</i>)</li>
@@ -122,13 +122,24 @@ $(function() {
         <li><code>data-center</code>: center the text in the dynamo container (<i>default: false</i>)</li>
         <li><code>data-delimiter</code>: change the character (or string) used to separate your bits of text (<i>default: ,</i>)</li>
         <li><code>data-pause</code>: sets up the dynamo, but does not automatically transition (<i>default: false</i>)</li>
+        <li><code>data-callback</code>: a function to be called each time the dynamo container completes a full cycle</li>
       </ul>
     </p>
+
+    <p><b>Alternatively, you can pass an options hash</b> - which takes precedence over data attributes - when calling <code>.dynamo()</code> like so:</p>
+
+    <pre class="example">$('#mytarget').dynamo({
+    delay: 1000,
+    lines: ['next text', 'after that', 'even later'],
+    callback: function() { console.log('All items have been shown') }
+});</pre>
+
+    <p><b>IMPORTANT:</b> Since dynamo automatically initializes DOM elements with class <code>.dynamo</code>, you will not be able to pass options to these elements (data attributes will still work, though). This is because dynamo prevents the user from initializing a dynamo container more than once.</p>
 
     <hr class="soften" />
 
     <p class="foot">
-      &copy; 2012 <a href="http://jordanscales.com" rel="nofollow" target="_blank">Jordan Scales</a> | MIT Licensed | <a href="http://github.com/prezjordan/dynamo.js" rel="nofollow" target="_blank">GitHub</a>
+      &copy; 2013 <a href="http://jordanscales.com" rel="nofollow" target="_blank">Jordan Scales</a> | MIT Licensed | <a href="http://github.com/prezjordan/dynamo.js" rel="nofollow" target="_blank">GitHub</a>
     </p>
   </div>
   
