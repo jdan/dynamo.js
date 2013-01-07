@@ -30,12 +30,26 @@ By default, dynamo.js will transition elements with a period specified by `data-
 
 ### Options
 
+**Using data attributes:**
+
 * `data-lines`: the bits of content you want to cycle through (not including the original content)
 * `data-speed`: the speed of the transition (*default: 350ms*)
 * `data-delay`: the delay between transitions (*default: 3000ms*)
 * `data-center`: center the text in the dynamo container (*default: false*)
 * `data-delimiter`: change the character (or string) used to separate your bits of text (*default: ,*)
 * `data-pause`: sets up the dynamo, but does not automatically transition (*default: false*)
+
+**Using an options hash:**
+
+Alternatively, you can pass an options hash - which takes precedence over data attributes - when calling `.dynamo()` like so.
+
+    $('#mytarget').dynamo({
+        speed: 100,
+        delay: 1000,
+        lines: ['next text', 'after that', 'even later']
+    });
+
+**IMPORANT:** Since dynamo automatically initializes DOM elements with class `.dynamo`, you will not be able to pass options to these elements (data attributes will still work, though). This is because dynamo prevents the user from initializing a dynamo container more than once.
 
 ### Contributing
 
@@ -44,7 +58,6 @@ If you want to make a change to dynamo (the code is very small and very approach
 * fork it.
 * commit your changes. (use proper git etiquette and work off a branch !!)
 * submit a pull request.
-* wait.
 
 I'm pretty quick with responses, so I'll likely shoot you a comment as confirmation. As for minifying - don't worry about it, I'll take care of that. Thanks for showing interest!
 
@@ -53,4 +66,4 @@ dynamo.js was inspired by a tagline rails app I had been working in the past, wh
 
 ---------------------------------------
 
-&copy; 2012 [Jordan Scales](http://jordanscales.com) | MIT Licensed | See LICENSE.txt
+&copy; 2013 [Jordan Scales](http://jordanscales.com) | MIT Licensed | See LICENSE.txt
