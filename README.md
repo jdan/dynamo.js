@@ -38,6 +38,7 @@ By default, dynamo.js will transition elements with a period specified by `data-
 * `data-center`: center the text in the dynamo container (*default: false*)
 * `data-delimiter`: change the character (or string) used to separate your bits of text (*default: ,*)
 * `data-pause`: sets up the dynamo, but does not automatically transition (*default: false*)
+* `data-callback`: a function to be called each time the dynamo container completes a full cycle
 
 **Using an options hash:**
 
@@ -46,7 +47,8 @@ Alternatively, you can pass an options hash - which takes precedence over data a
     $('#mytarget').dynamo({
         speed: 100,
         delay: 1000,
-        lines: ['next text', 'after that', 'even later']
+        lines: ['next text', 'after that', 'even later'],
+        callback: function() { console.log('All items have been shown') }
     });
 
 **IMPORANT:** Since dynamo automatically initializes DOM elements with class `.dynamo`, you will not be able to pass options to these elements (data attributes will still work, though). This is because dynamo prevents the user from initializing a dynamo container more than once.

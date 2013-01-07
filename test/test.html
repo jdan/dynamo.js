@@ -13,6 +13,11 @@
       font-size: 90px;
       line-height: 100px;
     }
+
+    #timer {
+      margin: 40px;
+      font-size: 200%;
+    }
   </style>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
@@ -25,18 +30,60 @@
   <p>Feel free to change this document and add any test cases you feel are appropriate.</p>
   
   <p>This is <span id="pause_example" class="dynamo" data-pause="true" data-lines="not paused.">paused.</span></p>
+
+  <p>Here is a timer to showcase callback functionality.</p>
+
+  <div id="timer">
+    <span id="digit6" class="dynamo6">0</span>
+    <span id="digit5" data-callback="bump(6)" class="dynamo10">0</span>
+    :
+    <span id="digit4" data-callback="bump(5)" class="dynamo6">0</span>
+    <span id="digit3" data-callback="bump(4)" class="dynamo10">0</span>
+    :
+    <span id="digit2" data-callback="bump(3)" class="dynamo6">0</span>
+    <span id="digit1" data-callback="bump(2)">0</span>
+  </div>
+
   <script type="text/javascript" src="../dynamo.js"></script>
   <script type="text/javascript">
     // let's see if data-delay is overwritten as expected...
     $('#container1').dynamo({
       speed: 50,
       delay: 500,
-      lines: ["as expected.", "at all.", "as planned."]
+      lines: ["as expected.", "at all.", "as planned."],
+      callback: function() { console.log('callback works!'); }
     });
 
+    // clickable, paused dynamos
     $('#pause_example').click(function() {
       $(this).dynamo_trigger();
     });
+
+    // timer example
+    bump = function(id) {
+      return function() {
+        $('#digit' + id).dynamo_trigger();
+      }
+    }
+
+    $('.dynamo10').dynamo({
+      speed: 300,
+      pause: true,
+      lines: '123456789'.split('')
+    });
+
+    $('.dynamo6').dynamo({
+      speed: 300,
+      pause: true,
+      lines: '12345'.split('')
+    });
+
+    $('#digit1').dynamo({
+      speed: 300,
+      delay: 1000,
+      lines: '123456789'.split('')
+    });
+
   </script>
 </body>
 </html>
