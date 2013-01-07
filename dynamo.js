@@ -61,7 +61,7 @@
             };
 
             if (!pause) {
-              setInterval(transition, delay);
+                setInterval(transition, delay);
             }
         });
     };

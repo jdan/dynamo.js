@@ -20,14 +20,20 @@
   <h1>dynam<span class="dynamo" data-lines="ic">o</span></h1>
   
   <p>This is a test document to see if your changes to dynamo.js work 
-    <span class="dynamo" data-delimiter="|" data-delay="1200" data-lines="right.|as planned.|at all.">correctly.</span></p>
+    <span id="container1" data-delimiter="|" data-delay="1200">correctly.</span></p>
     
   <p>Feel free to change this document and add any test cases you feel are appropriate.</p>
   
   <p>This is <span id="pause_example" class="dynamo" data-pause="true" data-lines="not paused.">paused.</span></p>
   <script type="text/javascript" src="../dynamo.js"></script>
   <script type="text/javascript">
-    $('.dynamo').dynamo();
+    // let's see if data-delay is overwritten as expected...
+    $('#container1').dynamo({
+      speed: 50,
+      delay: 500,
+      lines: ["as expected.", "at all.", "as planned."]
+    });
+
     $('#pause_example').click(function() {
       $(this).dynamo_trigger();
     });
