@@ -1,3 +1,14 @@
+/*!
+ * dynamo.js
+ * http://prezjordan.github.io/dynamo.js
+ *
+ * Copyright 2013 Jordan Scales (http://jordanscales.com)
+ * Released under the MIT license
+ * See LICENSE.txt
+ *
+ * Date: 2013-05-04
+ */
+
 (function($) {
 
   $.fn.dynamo = function(options) {
