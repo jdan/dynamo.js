@@ -28,6 +28,7 @@
       var pause = options.pause || v$.data('pause') || false;
       var lines = options.lines || v$.data('lines').split(v$.data('delimiter') || ',');
       var callback = options.callback || v$.data('callback') || function() {};
+      var centered = options.centered || v$.data('center') || false;
 
       // wrap the original contents in a span
       v$.html($('<span></span>').text(v$.text())).data('initialized', 'true');
@@ -73,7 +74,7 @@
         });
 
       // manually center it if we need to
-      if (v$.data('center'))
+      if (centered)
         v$.css('text-align', 'center');
 
       // now, animate it
