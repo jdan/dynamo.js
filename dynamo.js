@@ -31,7 +31,7 @@
       var centered = options.centered || v$.data('center') || false;
 
       // wrap the original contents in a span
-      v$.html($('<span></span>').text(v$.text())).data('initialized', 'true');
+      v$.html($('<span></span>').html(v$.html())).data('initialized', 'true');
 
       // grab the width of the span
       var max = v$.find('span:eq(0)').width();
@@ -39,7 +39,7 @@
       // for each item in data-lines, create a span with item as its content
       // compare the width of this span with the max
       for (k in lines) {
-        var span = $('<span></span>').text(lines[k]);
+        var span = $('<span></span>').html(lines[k]);
 
         v$.append(span);
         max = Math.max(max, span.width());
@@ -48,7 +48,7 @@
       // replace all the spans with inline-div$'s
       v$.find('span').each(function(i, ele) {
         var old$ = $(ele).remove();
-        var div$ = $('<div></div>').text(old$.text());
+        var div$ = $('<div></div>').html(old$.html());
 
         if (!i) {
           // our last element gets tagged

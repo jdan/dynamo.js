@@ -31,6 +31,8 @@
   
   <p>This is <span id="pause_example" class="dynamo" data-pause="true" data-lines="not paused.">paused.</span></p>
 
+  <p>Here are some links: <span id="digit7"><a href="#">one</a></span></p>
+
   <p>Here is a timer to showcase callback functionality.</p>
 
   <div id="timer">
@@ -42,6 +44,7 @@
     :
     <span id="digit2" data-callback="bump(3)" class="dynamo6">0</span>
     <span id="digit1" data-callback="bump(2)">0</span>
+
   </div>
 
   <script type="text/javascript" src="../dynamo.js"></script>
@@ -82,6 +85,13 @@
       speed: 300,
       delay: 1000,
       lines: '123456789'.split('')
+    });
+
+    $('#digit7').dynamo({
+      lines: [
+        '<a href="#">two</a>',
+        '<a href="#">three</a>'
+      ]
     });
 
   </script>
