@@ -1,0 +1,23 @@
+{
+    "name": "dynamo.js"
+  , "description": "Creates dynamic bits of HTML to add some zest to your content."
+  , "version": "0.5.0"
+  , "keywords": ["dynamo", "jquery"]
+  , "homepage": "http://prezjordan.github.com/dynamo.js/"
+  , "author": "Jordan Scales"
+  , "scripts": { "test": "make test" }
+  , "repository": {
+      "type": "git"
+    , "url": "https://github.com/prezjordan/dynamo.js.git"
+  }
+  , "licenses": [
+    {
+        "type": "MIT"
+      , "url": "http://opensource.org/licenses/MIT"
+    }
+  ]
+  , "devDependencies": {
+      "uglify-js": "2.3.6"
+    , "jshint": "2.1.4"
+  }
+}
