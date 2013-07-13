@@ -80,7 +80,7 @@
   $.fn.dynamo_trigger = function(options) {
 
     return this.each(function(i, v) {
-      options = options || {}
+      options = options || {};
 
       var v$ = $(v);
       var speed = options.speed || v$.data('speed') || 350;
