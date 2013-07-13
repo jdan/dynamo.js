@@ -1,6 +1,8 @@
 # Dynamo.js
 *a dead-simple way to add dynamic bits of content to your webpage*
 
+[![build status](https://travis-ci.org/prezjordan/dynamo.js.png)](https://travis-ci.org/prezjordan/dynamo.js)
+
 See it in action: http://prezjordan.github.com/dynamo.js/ 
 
 ### How does it work?
