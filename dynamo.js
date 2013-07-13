@@ -33,17 +33,10 @@
       // wrap the original contents in a span
       v$.html($('<span></span>').html(v$.html())).data('initialized', 'true');
 
-      // grab the width of the span
-      var max = v$.find('span:eq(0)').width();
-
-      // for each item in data-lines, create a span with item as its content
-      // compare the width of this span with the max
-      for (k in lines) {
-        var span = $('<span></span>').html(lines[k]);
-
-        v$.append(span);
-        max = Math.max(max, span.width());
-      }
+      // construct a span for each line in lines
+      lines.forEach(function(line) {
+        v$.append($('<span></span>').html(line));
+      });
 
       // replace all the spans with inline-div$'s
       v$.find('span').each(function(i, ele) {
@@ -55,7 +48,6 @@
           div$.data('trigger', 'true');
         }
 
-        div$.width(max);
         v$.append(div$);
       });
 
@@ -63,8 +55,7 @@
       var height = v$.find('>:first-child').height();
 
       // style
-      v$.width(max)
-        .height(height)
+      v$.height(height)
         .css({
           'display' : 'inline-block',
           'position' : 'relative',
