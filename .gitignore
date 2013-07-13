@@ -1,1 +1,5 @@
+# Ignore node modules
 node_modules/
+
+# Ignore commit template for uglify builds
+.commit.template
