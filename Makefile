@@ -1,7 +1,7 @@
 .PHONY:
 
 test: .PHONY
-	@./node_modules/.bin/jshint dynamo.js
+	@./node_modules/.bin/jslint dynamo.js
 	@echo "\nThanks for testing! ~jordan\n"
 
 build: .PHONY

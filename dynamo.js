@@ -7,11 +7,15 @@
  * See LICENSE.txt
  */
 
-(function($) {
+/*jslint browser: true, evil: true, sloppy: true, vars: true,
+         indent: 2, maxerr: 20, maxlen: 100 */
+/*global jQuery */
 
-  $.fn.dynamo = function(options) {
+(function ($) {
 
-    return this.each(function(i, v) {
+  $.fn.dynamo = function (options) {
+
+    return this.each(function (i, v) {
       options = options || {};
 
       // select the element v
@@ -21,24 +25,24 @@
       if (v$.data('initialized') === 'true') {
         return;
       }
-      
+
       var delay = options.delay || parseInt(v$.data('delay'), 10) || 3000;
       var speed = options.speed || parseInt(v$.data('speed'), 10) || 350;
       var pause = options.pause || v$.data('pause') || false;
       var lines = options.lines || v$.data('lines').split(v$.data('delimiter') || ',');
-      var callback = options.callback || v$.data('callback') || function() {};
+      var callback = options.callback || v$.data('callback') || function () {};
       var centered = options.centered || v$.data('center') || false;
 
       // wrap the original contents in a span
       v$.html($('<span></span>').html(v$.html())).data('initialized', 'true');
 
       // construct a span for each line in lines
-      lines.forEach(function(line) {
+      lines.forEach(function (line) {
         v$.append($('<span></span>').html(line));
       });
 
       // replace all the spans with inline-div$'s
-      v$.find('span').each(function(i, ele) {
+      v$.find('span').each(function (i, ele) {
         var old$ = $(ele).remove();
         var div$ = $('<div></div>').html(old$.html());
 
@@ -69,7 +73,7 @@
       }
 
       // now, animate it
-      var transition = function() {
+      var transition = function () {
         v$.dynamo_trigger({ speed: speed, callback: callback });
       };
 
@@ -78,17 +82,17 @@
       }
     });
   };
-  
-  $.fn.dynamo_trigger = function(options) {
 
-    return this.each(function(i, v) {
+  $.fn.dynamo_trigger = function (options) {
+
+    return this.each(function (i, v) {
       options = options || {};
 
       var v$ = $(v);
       var speed = options.speed || v$.data('speed') || 350;
-      var callback = options.callback || new Function(v$.data('callback')) || function() {};
+      var callback = options.callback || new Function(v$.data('callback')) || function () {};
 
-      v$.find('div:first').slideUp(speed, function() {
+      v$.find('div:first').slideUp(speed, function () {
         v$.append($(this).show());
 
         // check if the first item has made its way to the top again
@@ -102,4 +106,4 @@
   // automatically initiate cycles on elements of class 'dynamo'
   $('.dynamo').dynamo();
 
-})(jQuery);
+}(jQuery));

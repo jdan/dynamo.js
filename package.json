@@ -18,6 +18,6 @@
   ]
   , "devDependencies": {
       "uglify-js": "2.3.6"
-    , "jshint": "2.1.4"
+    , "jslint": "0.1.9"
   }
 }
