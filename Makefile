@@ -6,7 +6,7 @@ test: .PHONY
 
 build: .PHONY
 	@./node_modules/.bin/uglifyjs dynamo.js > dynamo.min.js
-	@echo "New dynamo.min.js build on `date +%F\ %I:%M%p` :rocket:\n\ndelete me!" > .commit.template
+	@echo "=== delete this line ===\nNew dynamo.min.js build on `date +%F\ %I:%M%p` :rocket:" > .commit.template
 	@git add dynamo.min.js
 	@git commit -t .commit.template
 	@rm .commit.template
