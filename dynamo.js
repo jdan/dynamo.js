@@ -18,11 +18,12 @@
       var v$ = $(v);
 
       // we mark launched dynamos as "intialized" then check so we don't initialize them twice
-      if (v$.data('initialized') == 'true')
+      if (v$.data('initialized') === 'true') {
         return;
+      }
       
-      var delay = options.delay || parseInt(v$.data('delay')) || 3000;
-      var speed = options.speed || parseInt(v$.data('speed')) || 350;
+      var delay = options.delay || parseInt(v$.data('delay'), 10) || 3000;
+      var speed = options.speed || parseInt(v$.data('speed'), 10) || 350;
       var pause = options.pause || v$.data('pause') || false;
       var lines = options.lines || v$.data('lines').split(v$.data('delimiter') || ',');
       var callback = options.callback || v$.data('callback') || function() {};
@@ -63,8 +64,9 @@
         });
 
       // manually center it if we need to
-      if (centered)
+      if (centered) {
         v$.css('text-align', 'center');
+      }
 
       // now, animate it
       var transition = function() {
@@ -84,14 +86,15 @@
 
       var v$ = $(v);
       var speed = options.speed || v$.data('speed') || 350;
-      var callback = options.callback || v$.data('callback') || function() {};
+      var callback = options.callback || new Function(v$.data('callback')) || function() {};
 
       v$.find('div:first').slideUp(speed, function() {
         v$.append($(this).show());
 
         // check if the first item has made its way to the top again
-        if (v$.find('div:first').data('trigger') == 'true')
-          eval(callback).call();
+        if (v$.find('div:first').data('trigger') === 'true') {
+          callback();
+        }
       });
     });
   };
