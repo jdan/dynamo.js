@@ -55,11 +55,14 @@ Alternatively, you can pass an options hash - which takes precedence over data a
 
 ### Contributing
 
-If you want to make a change to dynamo (the code is very small and very approachable!) please follow these steps
+If you want to make a change to dynamo (the code is very small and very approachable!) please follow these steps:
 
-* fork it.
-* commit your changes. (use proper git etiquette and work off a branch !!)
-* submit a pull request.
+* Install the development dependencies (`npm install`)
+* Checkout a feature branch (`git checkout -b feature/something-cool`)
+* Test your changes (`npm test`)
+* Commit your changes
+* Push your changes (`git push origin feature/something-cool`)
+* Open a pull request
 
 I'm pretty quick with responses, so I'll likely shoot you a comment as confirmation. As for minifying - don't worry about it, I'll take care of that. Thanks for showing interest!
 
