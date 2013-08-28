@@ -1,9 +1,9 @@
 # Dynamo.js
 *a dead-simple way to add dynamic bits of content to your webpage*
 
-[![build status](https://travis-ci.org/prezjordan/dynamo.js.png)](https://travis-ci.org/prezjordan/dynamo.js)
+[![build status](https://travis-ci.org/jdan/dynamo.js.png)](https://travis-ci.org/jdan/dynamo.js)
 
-See it in action: http://prezjordan.github.com/dynamo.js/ 
+See it in action: http://jdan.github.com/dynamo.js/
 
 ### How does it work?
 dynamo.js takes any portion of text and allows you to cycle through different content. Use it to add subtle effects to your webpage, or to make a particular section pop.
@@ -69,7 +69,7 @@ If you want to make a change to dynamo (the code is very small and very approach
 I'm pretty quick with responses, so I'll likely shoot you a comment as confirmation. As for minifying - don't worry about it, I'll take care of that. Thanks for showing interest!
 
 ### About
-dynamo.js was inspired by a tagline rails app I had been working in the past, which gives you the ability to generate a random tagline on your webpage. 
+dynamo.js was inspired by a tagline rails app I had been working in the past, which gives you the ability to generate a random tagline on your webpage.
 
 ---------------------------------------
 
