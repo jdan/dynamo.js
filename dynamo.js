@@ -30,7 +30,7 @@
       var speed = options.speed || parseInt(v$.data('speed'), 10) || 350;
       var pause = options.pause || v$.data('pause') || false;
       var lines = options.lines || v$.data('lines').split(v$.data('delimiter') || ',');
-      var callback = options.callback || v$.data('callback') || function () {};
+      var callback = options.callback || new Function(v$.data('callback')) || function () {};
       var centered = options.centered || v$.data('center') || false;
 
       // wrap the original contents in a span
