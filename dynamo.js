@@ -92,14 +92,17 @@
       var speed = options.speed || v$.data('speed') || 350;
       var callback = options.callback || new Function(v$.data('callback')) || function () {};
 
-      v$.find('div:first').slideUp(speed, function () {
-        v$.append($(this).show());
+      // check to see if this dynamo element has been paused since initialization
+      if (!$(this).data('pause')) {
+        v$.find('div:first').slideUp(speed, function () {
+          v$.append($(this).show());
 
-        // check if the first item has made its way to the top again
-        if (v$.find('div:first').data('trigger') === 'true') {
-          callback();
-        }
-      });
+          // check if the first item has made its way to the top again
+          if (v$.find('div:first').data('trigger') === 'true') {
+            callback();
+          }
+        });
+      }
     });
   };
 
